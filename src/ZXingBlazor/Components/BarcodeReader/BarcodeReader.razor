@@ -1,4 +1,4 @@
-﻿@namespace ZXingBlazor.Components 
+@namespace ZXingBlazor.Components 
 @inject IJSRuntime JsRuntime
 
 <div class="modal alert-popup" tabindex="-1" style="display:block" role="dialog">
@@ -7,12 +7,12 @@
             <!-- Edit form for the current item -->
             <div class="modal-body">
 
-                <button class="btn btn-primary p-2 m-1 w-25" id="startButton">扫码</button>
-                <button class="btn btn-secondary p-2 m-1 w-25" id="resetButton">复位</button>
-                <button type="button" class="btn btn-info p-2 m-1 w-25" id="closeButton">关闭</button>
+                <button class="btn btn-primary p-2 m-1 w-25" id="startButton">Scan code</button>
+                <button class="btn btn-secondary p-2 m-1 w-25" id="resetButton">Reset</button>
+                <button type="button" class="btn btn-info p-2 m-1 w-25" id="closeButton">Shut down</button>
 
                 <div id="sourceSelectPanel" style="display:none">
-                    <label for="sourceSelect">选择设备:</label><span class="text-dark" id="result"></span>
+                    <label for="sourceSelect">Select camera:</label><span class="text-dark" id="result"></span>
                     <select id="sourceSelect" style="max-width:100%" class="form-control">
                     </select>
                 </div>
@@ -29,32 +29,32 @@
 
 @code {
     /// <summary>
-    /// BarcodeReader 条码扫描
+    /// BarcodeReader
     /// </summary>
 
 
 
     /// <summary>
-    /// 扫码结果回调方法
+    /// Scan code result callback method
     /// </summary>
     [Parameter]
     public EventCallback<string> ScanResult { get; set; }
 
     /// <summary>
-    /// 关闭扫码框回调方法
+    /// Close the callback method of the scan code box
     /// </summary>
     [Parameter]
     public EventCallback Close { get; set; }
 
 
     /// <summary>
-    /// 扫码结果
+    /// Scanning result
     /// </summary>
     [Parameter]
     public string? Result { get; set; }
 
     /// <summary>
-    /// 显示扫码框
+    /// Show scan code box
     /// </summary>
     [Parameter]
     public bool ShowScanBarcode { get; set; }
@@ -73,7 +73,6 @@
         Result = val;
         StateHasChanged();
         await ScanResult.InvokeAsync(val);
-        //return Task.CompletedTask;
     }
 
     [JSInvokable("invokeFromJSClose")]
@@ -84,6 +83,3 @@
 
 
 }
-
-
-
