@@ -10,8 +10,8 @@
                 <div id="canvas" style="height: 300px;">
                 </div>
                 <div>
-                    <button class="btn btn-secondary p-2 m-1 w-25" id="clearCanvas">清除</button>
-                    <button class="btn btn-primary p-2 m-1 w-25" id="saveCanvas">保存</button>
+                    <button class="btn btn-secondary p-2 m-1 w-25" id="clearCanvas">Clear</button>
+                    <button class="btn btn-primary p-2 m-1 w-25" id="saveCanvas">Save</button>
                 </div>
             </div>
         </div>
@@ -27,26 +27,26 @@
 
 
         /// <summary>
-        /// 扫码结果回调方法
+        /// Scan code result callback method
         /// </summary>
         [Parameter]
         public EventCallback<string> HandwrittenBase64 { get; set; }
 
         /// <summary>
-        /// 关闭扫码框回调方法
+        /// Close the callback method of the scan code box
         /// </summary>
         [Parameter]
         public EventCallback Close { get; set; }
 
 
         /// <summary>
-        /// 扫码结果
+        /// Scanning result
         /// </summary>
         [Parameter]
         public string? Result { get; set; }
 
         /// <summary>
-        /// 显示扫码框
+        /// Show scan code box
         /// </summary>
         [Parameter]
         public bool ShowHandwritten { get; set; }
